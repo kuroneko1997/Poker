@@ -16,6 +16,7 @@ public class Main {
             num = Integer.parseInt(scan.next());
 
             if (num == 1) {
+                game.gamesistem();
             } else if (num == 2) {
                 help.yaku();
             } else if (num == 3) {
