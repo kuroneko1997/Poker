@@ -7,20 +7,22 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        int num=0;
         System.out.println("~~~~~ポーカーゲーム~~~~~");
-        System.out.println("1,ゲームスタート\n2,役の説明\n3,ゲーム終了");
-        System.out.println("選びたい項目の番号を入力してください。");
-        Scanner scan = new Scanner(System.in);
-        int num =  Integer.parseInt(scan.next());
-        if(num==1){
-        }
-        else if(num==2){
-        }
-        else if (num==3){
-            System.exit(0);
-        }
-        else{
-            System.out.println("項目の番号を入力してください");
+        while(num!=1) {
+            System.out.println("1,ゲームスタート\n2,役の説明\n3,ゲーム終了");
+            System.out.println("選びたい項目の番号を入力してください。");
+            Scanner scan = new Scanner(System.in);
+            num = Integer.parseInt(scan.next());
+
+            if (num == 1) {
+            } else if (num == 2) {
+                help.yaku();
+            } else if (num == 3) {
+                System.exit(0);
+            } else {
+                System.out.println("項目の番号を入力してください");
+            }
         }
     }
 }
