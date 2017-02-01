@@ -14,7 +14,6 @@ public class Main {
             System.out.println("選びたい項目の番号を入力してください。\n");
             Scanner scan = new Scanner(System.in);
             num = Integer.parseInt(scan.next());
-
             if (num == 1) {
                 game.gamesistem();
             } else if (num == 2) {
