@@ -11,7 +11,7 @@ public class Main {
         System.out.println("~~~~~ポーカーゲーム~~~~~");
         while(num!=1) {
             System.out.println("1,ゲームスタート\n2,役の説明\n3,ゲーム終了");
-            System.out.println("選びたい項目の番号を入力してください。");
+            System.out.println("選びたい項目の番号を入力してください。\n");
             Scanner scan = new Scanner(System.in);
             num = Integer.parseInt(scan.next());
 
@@ -21,8 +21,6 @@ public class Main {
                 help.yaku();
             } else if (num == 3) {
                 System.exit(0);
-            } else {
-                System.out.println("項目の番号を入力してください");
             }
         }
     }
