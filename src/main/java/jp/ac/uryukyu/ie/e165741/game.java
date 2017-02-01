@@ -17,8 +17,8 @@ public class game {
             Scanner scan = new Scanner(System.in);
             num = Integer.parseInt(scan.next());
         }
-
-
-
+        System.out.println("ゲームスタート");
+        System.out.println("最初の手札");
+        CardinHand.firstcardopen();
     }
 }
