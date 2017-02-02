@@ -11,6 +11,11 @@ public class CardinHand {
     private static ArrayList<Integer> number;
     private static ArrayList<Integer> Handsuit;
     private static ArrayList<Integer> Handnumber;
+    private static ArrayList<Integer> Handsuit2;
+    private static ArrayList<Integer> Handnumber2;
+    private static ArrayList changecardnumber ;
+    private static Random rn=new Random();
+    private static Random om=new Random();
     public static void firstcardopen(){
         int i =1;
         int x =1;
@@ -24,8 +29,6 @@ public class CardinHand {
         number = new ArrayList<Integer>();
         Suit = Cardstack.getSuit();
         number = Cardstack.getList();
-        Random rn=new Random();
-        Random om=new Random();
         while (i<6) {
             int rnd = rn.nextInt(3);
             int dom = om.nextInt(52);
@@ -45,8 +48,51 @@ public class CardinHand {
             }
             Handnumber.add(dom);
             Handsuit.add(rnd);
-            System.out.printf(i + "[%s%s]",Suit.get(rnd),number.get(dom) );
+            System.out.printf(i+ "[%s%s]",Suit.get(rnd),number.get(dom) );
             i++;
+        }
+    }
+    public static void secandcardopen(int k){
+        int i=1;
+        int x=0;
+        int v=0;
+        int j=1;
+        Handnumber2 =new ArrayList<Integer>();
+        Handsuit2 =new ArrayList<Integer>();
+        Handnumber2.add(0);
+        Handsuit2.add(0);
+        while(i<6) {
+            Handnumber2.add(Handnumber.get(i));
+            Handsuit2.add(Handsuit.get(i));
+            i++;
+        }
+        changecardnumber =new ArrayList<Integer>();
+        changecardnumber =game.getchengenumber();
+        while (v<k){
+            int rnd = rn.nextInt(3);
+            int dom = om.nextInt(53);
+            while(x<Handsuit.size()) {
+                if (number.get(Handnumber.get(x)) == number.get(dom) && Suit.get(Handsuit.get(x)) == Suit.get(rnd)) {
+                    while (number.get(Handnumber.get(x)) == number.get(dom) || Suit.get(Handsuit.get(x)) == Suit.get(rnd)) {
+                        rnd = rn.nextInt(3);
+                        dom = om.nextInt(53);
+                    }
+                    x = 0;
+                } else {
+                    x++;
+                }
+            }if (dom == 53) {
+                rnd = 4;
+            }
+            Handnumber.add(dom);
+            Handsuit.add(rnd);
+            Handnumber2.set((Integer) changecardnumber.get(v),dom);
+            Handsuit2.set((Integer)changecardnumber.get(v),rnd);
+            v++;
+        }
+        while(j<6) {
+            System.out.printf(j + "[%s%s]", Suit.get(Handsuit2.get(j)), number.get(Handnumber2.get(j)));
+            j++;
         }
     }
 }
