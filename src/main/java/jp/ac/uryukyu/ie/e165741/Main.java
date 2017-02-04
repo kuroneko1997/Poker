@@ -6,7 +6,10 @@ import java.util.Scanner;
  * Created by e1657 on 2017/01/31.
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] arges) {
+        Mainmenu();
+    }
+    public static void Mainmenu(){
         int num=0;
         System.out.println("~~~~~ポーカーゲーム~~~~~");
         while(num!=1) {

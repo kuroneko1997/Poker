@@ -18,7 +18,7 @@ public class Cardstack {
         Suit.put(4,"Joker");
         int i =0;
         int n = 0;
-        while(i<53){
+        while(i<51){
             n++;
             number.add(n);
             if(n>12){
@@ -26,7 +26,7 @@ public class Cardstack {
             }
             i++;
         }
-        number.add(null);
+        number.add(0);
     }
     public static HashMap getSuit(){
         return Suit;

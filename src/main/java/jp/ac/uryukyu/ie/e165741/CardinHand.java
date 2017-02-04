@@ -36,14 +36,14 @@ public class CardinHand {
                 if(Handnumber.get(x)==dom && Handsuit.get(x)==rnd){
                     while(dom==Handnumber.get(x)||rnd==Handsuit.get(x)){
                         rnd = rn.nextInt(3);
-                        dom = om.nextInt(53);
+                        dom = om.nextInt(52);
                     }
                     x=1;
                 }else{
                     x++;
                 }
             }
-            if(dom==53){
+            if(dom==52){
                 rnd=4;
             }
             Handnumber.add(dom);
@@ -70,18 +70,18 @@ public class CardinHand {
         changecardnumber =game.getchengenumber();
         while (v<k){
             int rnd = rn.nextInt(3);
-            int dom = om.nextInt(53);
+            int dom = om.nextInt(52);
             while(x<Handsuit.size()) {
                 if (number.get(Handnumber.get(x)) == number.get(dom) && Suit.get(Handsuit.get(x)) == Suit.get(rnd)) {
                     while (number.get(Handnumber.get(x)) == number.get(dom) || Suit.get(Handsuit.get(x)) == Suit.get(rnd)) {
                         rnd = rn.nextInt(3);
-                        dom = om.nextInt(53);
+                        dom = om.nextInt(52);
                     }
                     x = 0;
                 } else {
                     x++;
                 }
-            }if (dom == 53) {
+            }if (dom == 52) {
                 rnd = 4;
             }
             Handnumber.add(dom);
@@ -95,4 +95,8 @@ public class CardinHand {
             j++;
         }
     }
+    public static ArrayList getHandnumber(){return Handnumber;}
+    public static ArrayList getHandnumber2(){return Handnumber2;}
+    public static ArrayList getHandsuit(){return Handsuit;}
+    public static ArrayList getHandsuit2(){return Handsuit2;}
 }

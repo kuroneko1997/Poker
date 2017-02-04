@@ -6,7 +6,8 @@ package jp.ac.uryukyu.ie.e165741;
 public class help {
     public static void yaku(){
         System.out.println("====搭載されている役一覧====");
-        System.out.println("ワンペア：同数字が2枚ある場合。倍率1.5倍");
+        System.out.println("ハイカード：役ができていない状態");
+        System.out.println("ワンペア：同数字が2枚ある場合。倍率2倍");
         System.out.println("ツーペア：同数字の組が２つある場合。倍率５倍");
         System.out.println("スリーカード：同数字が３枚ある場合。倍率４倍");
         System.out.println("フォーカード：同数字が4枚ある場合。倍率10倍");
