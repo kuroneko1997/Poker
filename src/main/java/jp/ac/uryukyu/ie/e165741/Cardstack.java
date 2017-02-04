@@ -18,7 +18,7 @@ public class Cardstack {
         Suit.put(4,"Joker");
         int i =0;
         int n = 0;
-        while(i<51){
+        while(i<52){
             n++;
             number.add(n);
             if(n>12){

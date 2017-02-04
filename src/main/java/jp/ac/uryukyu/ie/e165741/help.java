@@ -3,6 +3,7 @@ package jp.ac.uryukyu.ie.e165741;
 /**
  * Created by e1657 on 2017/01/31.
  */
+//役の説明をするクラス
 public class help {
     public static void yaku(){
         System.out.println("====搭載されている役一覧====");
