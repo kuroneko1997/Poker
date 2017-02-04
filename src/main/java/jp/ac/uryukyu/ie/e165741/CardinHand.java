@@ -18,7 +18,6 @@ public class CardinHand {
     private static Random om=new Random();
     public static void firstcardopen(){
         int i =1;
-        int x =1;
         Cardstack cardstack = new Cardstack();
         cardstack.firstcardstack();
         Handnumber =new ArrayList<Integer>();
@@ -30,11 +29,12 @@ public class CardinHand {
         Suit = Cardstack.getSuit();
         number = Cardstack.getList();
         while (i<6) {
+            int x =1;
             int rnd = rn.nextInt(3);
             int dom = om.nextInt(52);
-            while(x<i){
-                if(Handnumber.get(x)==dom && Handsuit.get(x)==rnd){
-                    while(dom==Handnumber.get(x)||rnd==Handsuit.get(x)){
+            while(x<Handnumber.size()){
+                if(number.get(Handnumber.get(x)) == number.get(dom) && Suit.get(Handsuit.get(x)) == Suit.get(rnd)){
+                    while(number.get(Handnumber.get(x)) == number.get(dom) || Suit.get(Handsuit.get(x)) == Suit.get(rnd)){
                         rnd = rn.nextInt(3);
                         dom = om.nextInt(52);
                     }
@@ -54,7 +54,6 @@ public class CardinHand {
     }
     public static void secandcardopen(int k){
         int i=1;
-        int x=0;
         int v=0;
         int j=1;
         Handnumber2 =new ArrayList<Integer>();
@@ -69,6 +68,7 @@ public class CardinHand {
         changecardnumber =new ArrayList<Integer>();
         changecardnumber =game.getchengenumber();
         while (v<k){
+            int x=0;
             int rnd = rn.nextInt(3);
             int dom = om.nextInt(52);
             while(x<Handsuit.size()) {
