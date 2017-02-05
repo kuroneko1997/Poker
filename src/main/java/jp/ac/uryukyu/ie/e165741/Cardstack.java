@@ -11,11 +11,11 @@ public class Cardstack {
     public  void firstcardstack(){
         Suit = new HashMap<Integer, String>();
         number = new ArrayList<Integer>();
-        Suit.put(0, "♠");
-        Suit.put(1,"♦");
-        Suit.put(2,"♥");
-        Suit.put(3,"♣");
-        Suit.put(4,"Joker");
+        Suit.put(0, "スペード・");
+        Suit.put(1,"ダイヤ・");
+        Suit.put(2,"ハート・");
+        Suit.put(3,"クラブ・");
+        Suit.put(4,"Joker・");
         int i =0;
         int n = 0;
         while(i<52){
