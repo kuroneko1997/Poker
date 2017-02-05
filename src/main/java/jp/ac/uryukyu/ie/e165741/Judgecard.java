@@ -37,7 +37,7 @@ public class Judgecard {
             b++;
         }
         Collections.sort(judgestraight);
-        if (judgeSuit.get(a) == 4) {
+        if (Collections.max(judgeSuit) == 4) {
             jcount++;
         }
         if (jcount == 1) {
