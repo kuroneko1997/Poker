@@ -63,7 +63,7 @@ public class game {
             Mainmenu.mainmenu();
         }
     }
-    //他クラス用のreturnメソッド
+    //他クラス用のgetメソッド
     public static ArrayList getchengenumber(){
         return changecardnumber;
     }

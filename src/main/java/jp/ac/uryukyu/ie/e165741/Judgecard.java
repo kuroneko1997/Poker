@@ -4,13 +4,13 @@ package jp.ac.uryukyu.ie.e165741;
  */
 import java.util.ArrayList;
 import java.util.Collections;
-
+//役の判定を行うクラス
 public class Judgecard {
     private static ArrayList<Integer> judgeSuit;
     private static ArrayList<Integer> judgenumber;
-    private static ArrayList<Integer> number;
+    private static ArrayList<Integer> number;//Cardstackからの引き継ぎ用
     private static ArrayList<Integer> judgestraight;
-
+    //判定全体を管理するメソッド。各役の成否を数値で判断し、他メソッドを使用する。
     public static void judgecard(int c) {
         int a = 1;
         int b = 1;
@@ -24,10 +24,10 @@ public class Judgecard {
         judgenumber = new ArrayList<Integer>();
         number = new ArrayList<Integer>();
         number = Cardstack.getList();
-        if (c == 1) {
+        if (c == 1) {//最初で役を判定する場合に使うリスト
             judgeSuit = CardinHand.getHandsuit();
             judgenumber = CardinHand.getHandnumber();
-        } else {
+        } else {//2回目の手札で役を判定する場合に使うリスト
             judgeSuit = CardinHand.getHandsuit2();
             judgenumber = CardinHand.getHandnumber2();
         }
@@ -53,9 +53,9 @@ public class Judgecard {
         } else if (Scount == 4 || pcount == 0 && pcount2 == 0 && pcount3 == 0) {
             straight = Judgestraight(1);
         }
-        Judgeyaku(jcount, Scount, straight, pcount, pcount2, pcount3);
+        Judgeyaku(jcount, Scount, straight, pcount, pcount2, pcount3);//出揃った各役の値を最終判定するメソッドに送る
     }
-
+    //最終的な役の判定をするメソッド。役の表示とresultクラスに倍率の値を送る
     public static void Judgeyaku(int jcount, int Scount, int straight, int pcount, int pcount2, int pcount3) {
         if (jcount == 1 && Scount == 3 && straight == 3 || Scount == 4 && straight == 4) {
             System.out.println("ストレートフラッシュ");
@@ -91,7 +91,7 @@ public class Judgecard {
 
     }
 
-
+    //ストレートかどうかを判定するメソッド
     public static int Judgestraight(int k) {
         int straight = 0;
         int x = 0;
@@ -136,7 +136,7 @@ public class Judgecard {
         }
         return straight;
     }
-
+    //フラッシュかどうかを判定するメソッド
     public static int Judgeflash(int jcount) {
         int Scount = 0;
         if (jcount == 1) {
@@ -159,7 +159,7 @@ public class Judgecard {
         }
         return Scount;
     }
-
+    //ジョーカーがある場合にペアを判定するメソッド
     public static int JudgePair() {
         int pcount = 0;
         if (judgestraight.get(1) == judgestraight.get(4)) {
@@ -175,6 +175,7 @@ public class Judgecard {
         }
         return pcount;
     }
+    //ジョーカーがない場合にペアを判定するメソッド
     public static int JudgePair2(int k) {
         int pcount=0;
         int pcount2=0;

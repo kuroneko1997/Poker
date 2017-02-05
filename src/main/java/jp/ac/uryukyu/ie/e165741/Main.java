@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by e1657 on 2017/01/31.
  */
-//非対戦式ポーカーゲーム。延々と金を集めるのが目的
+//非対戦式ポーカーゲーム。延々と金を集めるのが目的。mainメソッドはMainmenu.mainmenu()への繋ぎのみを行う。
 public class Main {
     public static void main(String[] arges) {
         Mainmenu.mainmenu();

@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * Created by e1657 on 2017/02/04.
  */
+//メインメニューを扱うクラス。ユーザーの入力に応じてゲーム開始、ヘルプに移動、終了を行う。
 public class Mainmenu {
     public static void mainmenu(){
         int num=0;

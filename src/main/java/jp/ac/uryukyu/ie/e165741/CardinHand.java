@@ -3,17 +3,18 @@ package jp.ac.uryukyu.ie.e165741;
 /**
  * Created by e1657 on 2017/02/01.
  */
+//手札を形成するクラス
 import java.util.Random;
 import java.util.HashMap;
 import java.util.ArrayList;
 public class CardinHand {
-    private static HashMap<Integer, String> Suit;
-    private static ArrayList<Integer> number;
-    private static ArrayList<Integer> Handsuit;
-    private static ArrayList<Integer> Handnumber;
-    private static ArrayList<Integer> Handsuit2;
-    private static ArrayList<Integer> Handnumber2;
-    private static ArrayList changecardnumber ;
+    private static HashMap<Integer, String> Suit;//Cardstackクラスからの引き継ぎ用
+    private static ArrayList<Integer> number;//Cardstackクラスからの引き継ぎ用
+    private static ArrayList<Integer> Handsuit;//最初の手札のスートを格納するリスト
+    private static ArrayList<Integer> Handnumber;//最初の手札の数字を格納するリスト
+    private static ArrayList<Integer> Handsuit2;//2回目の手札のスートを格納するリスト
+    private static ArrayList<Integer> Handnumber2;//2回目の手札の数字を格納するリスト
+    private static ArrayList changecardnumber ;//gameクラスからの引き継ぎ用
     private static Random rn=new Random();
     private static Random om=new Random();
     public static void firstcardopen(){
@@ -28,10 +29,11 @@ public class CardinHand {
         number = new ArrayList<Integer>();
         Suit = Cardstack.getSuit();
         number = Cardstack.getList();
-        while (i<6) {
+        while (i<6) {//最初の手札を形成するwhile文
             int x =1;
             int rnd = rn.nextInt(3);
             int dom = om.nextInt(52);
+            //今までに出たカードのスートと数字の両方が一致した場合、どちらかが違うまで乱数を発生させるwhile文
             while(x<Handnumber.size()){
                 if(number.get(Handnumber.get(x)) == number.get(dom) && Suit.get(Handsuit.get(x)) == Suit.get(rnd)){
                     while(number.get(Handnumber.get(x)) == number.get(dom) || Suit.get(Handsuit.get(x)) == Suit.get(rnd)){
@@ -67,11 +69,11 @@ public class CardinHand {
         }
         changecardnumber =new ArrayList<Integer>();
         changecardnumber =game.getchengenumber();
-        while (v<k){
+        while (v<k){//2回目の手札を形成するwhile文。今回は交換する枚数だけ新たに乱数を発生させる。
             int x=0;
             int rnd = rn.nextInt(3);
             int dom = om.nextInt(52);
-            while(x<Handsuit.size()) {
+            while(x<Handsuit.size()) {//最初と同じく今までに出たカードのスートと数字の両方が一致した場合、どちらかが違うまで乱数を発生させるwhile文
                 if (number.get(Handnumber.get(x)) == number.get(dom) && Suit.get(Handsuit.get(x)) == Suit.get(rnd)) {
                     while (number.get(Handnumber.get(x)) == number.get(dom) || Suit.get(Handsuit.get(x)) == Suit.get(rnd)) {
                         rnd = rn.nextInt(3);
@@ -95,6 +97,7 @@ public class CardinHand {
             j++;
         }
     }
+    //他クラス用のgetメソッド
     public static ArrayList getHandnumber(){return Handnumber;}
     public static ArrayList getHandnumber2(){return Handnumber2;}
     public static ArrayList getHandsuit(){return Handsuit;}
